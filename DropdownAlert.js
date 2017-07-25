@@ -222,7 +222,7 @@ export default class DropdownAlert extends Component {
               StatusBar.setBackgroundColor(this.props.inactiveStatusBarBackgroundColor, true)
             } else {
               StatusBar.setBarStyle(this.props.inactiveStatusBarStyle, true)
-            }                        
+            }
           }
           if (onDismiss) {
             var data = {
@@ -424,7 +424,7 @@ export default class DropdownAlert extends Component {
                 disabled={!this.props.tapToCloseEnabled}
                 onLayout={(event) => this.onLayoutEvent(event)}>
               <View style={style}>
-                {this.renderImage(source, StyleSheet.flatten(this.props.imageStyle))}
+                {/* this.renderImage(source, StyleSheet.flatten(this.props.imageStyle)) */}
                 <View style={styles.textContainer}>
                   {this.renderText(this.state.title, StyleSheet.flatten(this.props.titleStyle), this.props.titleNumOfLines)}
                   {this.renderText(this.state.message, StyleSheet.flatten(this.props.messageStyle), this.props.messageNumOfLines)}
@@ -446,12 +446,13 @@ export default class DropdownAlert extends Component {
 
 var styles = StyleSheet.create({
   defaultContainer: {
-    padding: 8,
+    padding: 0,
     paddingTop: (Platform.OS === 'android') ? 0 : 20,
     flexDirection: 'row'
   },
   textContainer: {
     flex: 1,
-    padding: 8
+    padding: 8,
+    paddingTop: 4
   }
 })
